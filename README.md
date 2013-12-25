@@ -1,1 +1,1 @@
-Software deployed on: http://enigmatic-eyrie-6052.herokuapp.com/breweries
+Software deployed on: http://ratebeer-wadror.herokuapp.com/breweries
