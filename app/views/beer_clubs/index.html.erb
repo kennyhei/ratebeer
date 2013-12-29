@@ -1,0 +1,13 @@
+<h2>Listing beer clubs</h2>
+
+<p>Number of clubs: <%= @clubs.count %></p>
+
+<ul>
+  <% @clubs.each do |club| %>
+      <li>
+        <%= link_to club.name, club %>
+      </li>
+  <% end %>
+</ul>
+
+<%= link_to 'New beer club', new_beer_club_path %>

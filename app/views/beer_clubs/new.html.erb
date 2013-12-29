@@ -1,0 +1,9 @@
+<h2>New beer club</h2>
+
+<%= form_for(@club) do |f| %>
+    Name: <%= f.text_field :name %>
+    Founded: <%= f.number_field :founded %>
+    City: <%= f.text_field :city %>
+
+    <%= f.submit %>
+<% end %>

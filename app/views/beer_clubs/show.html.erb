@@ -1,0 +1,12 @@
+<h2><%= @club.name %></h2>
+
+<p>Founded <%= @club.founded %></p>
+
+<p>
+  <strong>members:</strong>
+  <ul>
+    <% @club.members.each do |member| %>
+        <li><%= link_to member.username, member %></li>
+    <% end %>
+  </ul>
+</p>
