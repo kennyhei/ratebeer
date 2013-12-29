@@ -1,1 +1,1 @@
-Software deployed on: http://ratebeer-wadror.herokuapp.com/breweries
+Software deployed on: http://ratebeer-wadror.herokuapp.com
