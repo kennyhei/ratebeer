@@ -26,6 +26,16 @@
   </p>
 <% end %>
 
+<p>
+  <strong>Favorite brewery:</strong>
+  <%= @user.favorite_brewery.name %>
+</p>
+
+<p>
+  <strong>Favorite style:</strong>
+  <%= @user.favorite_style %>
+</p>
+
 <% if currently_signed_in? @user %>
   <%= link_to 'Edit', edit_user_path(@user) %> |
   <%= link_to 'Destroy', @user, method: :delete, data: { confirm: 'Are you sure?' } %> |

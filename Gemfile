@@ -46,6 +46,15 @@ gem 'debugger', :group => :development
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.1.2'
 
+# Rspec for testing
+group :development, :test do
+  gem 'rspec-rails', '~> 2.0'
+end
+
+group :test do
+  gem 'factory_girl_rails'
+end
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
