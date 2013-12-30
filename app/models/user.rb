@@ -23,16 +23,16 @@ class User < ActiveRecord::Base
   end
 
   def favorite_style
-    return nil if ratings.empty?
     calculate_favorite :style
   end
 
   def favorite_brewery
-    return nil if ratings.empty?
     calculate_favorite :brewery
   end
 
   def calculate_favorite(attribute)
+    return nil if ratings.empty?
+
     groups = ratings.group_by { |r| r.beer.send attribute }
     groups = calculate_average_ratings_for groups
     groups.max_by { |key, avg_rating| avg_rating }[0]

@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="18b2812b-148e-433c-93c1-fba640b74371" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ratebeer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,7 +28,7 @@
       <file leaf-file-name="user.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/user.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="5" selection-start="942" selection-end="942" vertical-scroll-proportion="0.47288504" vertical-offset="492" max-vertical-offset="1595">
+            <state line="38" column="5" selection-start="1117" selection-end="1117" vertical-scroll-proportion="0.7245119" vertical-offset="434" max-vertical-offset="1595">
               <folding />
             </state>
           </provider>
@@ -914,7 +913,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/user.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="5" selection-start="942" selection-end="942" vertical-scroll-proportion="0.47288504" vertical-offset="492" max-vertical-offset="1595">
+        <state line="38" column="5" selection-start="1117" selection-end="1117" vertical-scroll-proportion="0.7245119" vertical-offset="434" max-vertical-offset="1595">
           <folding />
         </state>
       </provider>
