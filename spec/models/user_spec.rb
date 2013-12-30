@@ -107,7 +107,7 @@ describe User do
     end
 
     it "is the only one rated if only one rating" do
-      brewery = create_brewery_with_beer_and_rating "Koff", 10, user
+      brewery = create_brewery_with_beers_and_ratings "Koff", 10, user
       expect(user.favorite_brewery).to eq(brewery)
     end
 
@@ -121,13 +121,6 @@ describe User do
 end
 
 ## Breweries, ratings and styles ##
-
-def create_brewery_with_beer_and_rating(name, score, user)
-  brewery = FactoryGirl.create(:brewery, :name => name)
-  beer = create_beer_with_rating score, user
-  brewery.beers << beer
-  brewery
-end
 
 def create_brewery_with_beers_and_ratings(name, *scores, user)
   brewery = FactoryGirl.create(:brewery, :name => name)
