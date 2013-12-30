@@ -19,40 +19,31 @@ class User < ActiveRecord::Base
 
   def favorite_beer
     return nil if ratings.empty? # Return nil if no ratings
-
     ratings.sort_by { |r| r.score }.last.beer
   end
 
   def favorite_style
     return nil if ratings.empty?
-
-    style_ratings = calculate_average_ratings_for_styles
-    style_ratings.max_by { |style, avg_rating| avg_rating}[0] # Return style with highest avg rating
+    calculate_favorite :style
   end
 
   def favorite_brewery
     return nil if ratings.empty?
-
-    brewery_ratings = calculate_average_ratings_for_breweries
-    brewery_ratings.max_by { |brewery, avg_rating| avg_rating}[0] # Return brewery with highest avg rating
+    calculate_favorite :brewery
   end
 
-  def calculate_average_ratings_for_breweries
-    brewery_group = ratings.group_by { |r| r.beer.brewery }
-    calculate_average_ratings brewery_group
+  def calculate_favorite(attribute)
+    groups = ratings.group_by { |r| r.beer.send attribute }
+    groups = calculate_average_ratings_for groups
+    groups.max_by { |key, avg_rating| avg_rating }[0]
   end
 
-  def calculate_average_ratings_for_styles
-    style_group = ratings.group_by { |r| r.beer.style }
-    calculate_average_ratings style_group
-  end
-
-  def calculate_average_ratings(group)
-    group.keys.each do |key|
-      sum = group[key].inject(0.0) { |sum, rating| sum + rating.score }
-      group[key] = sum / group[key].count
+  def calculate_average_ratings_for(groups)
+    groups.keys.each do |key|
+      sum = groups[key].inject(0.0) { |sum, rating| sum + rating.score }
+      groups[key] = sum / groups[key].count
     end
 
-    group
+    groups
   end
 end
