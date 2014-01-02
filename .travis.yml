@@ -1,13 +1,11 @@
 language: ruby
 
 rvm:
- - 2.0.0
+ - 1.9.3
 
 script:
  - bundle exec rake db:migrate --trace
  - RAILS_ENV=test bundle exec rake db:migrate --trace
  - bundle exec rake db:test:prepare
  - bundle exec rspec -f d spec
-
-notifications:
-  email: false
+ 
