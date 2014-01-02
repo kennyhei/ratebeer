@@ -6,7 +6,23 @@ script:
 - RAILS_ENV=test bundle exec rake db:migrate --trace
 - bundle exec rake db:test:prepare
 - bundle exec rspec -f d spec/
-deploy:
-  provider: heroku
-  api_key:
-    secure: Pyo60KKBSqI1OHktH29uixEfIfTvrQar074rMqLVfDB1lZ7/w00ntWBHRJQk7jXMuxlPDV7wofV/LsbGWhYeGqZ3zz//tEqnWETBQHUaQ+wLITj0UwwcH1LbGXhsBc+c5Th4niKZLU2709MJRW7TnG28CtBGKVoP2QMkqiz7APY=
+
+env:
+  global:
+    - secure: "coGLeX7eLYPzlZGFy4ByOH6xi+TffBENj0jrIPr3Olgf47y7pf5R3Hla5ziXV8jyni5FFzMYAC1sZ5RkMX9Ybzeoq7aw2hTOrHSM5W+czF8vqM0Xqh7DRy82iN2DikykTnt9CcpeGW0Zy2lQ32aUSW7h+mypJwvj6xdfqpAaX3Y="
+after_script:
+  # Install the Heroku gem (or the Heroku toolbelt)
+  - gem install heroku
+  # Add your Heroku git repo:
+  - git remote add heroku git@heroku.com:ratebeer-wadror.git
+  # Turn off warnings about SSH keys:
+  - echo "Host heroku.com" >> ~/.ssh/config
+  - echo "   StrictHostKeyChecking no" >> ~/.ssh/config
+  - echo "   CheckHostIP no" >> ~/.ssh/config
+  - echo "   UserKnownHostsFile=/dev/null" >> ~/.ssh/config
+  # Clear your current Heroku SSH keys:
+  - heroku keys:clear
+  # Add a new SSH key to Heroku
+  - yes | heroku keys:add
+  # Push to Heroku!
+  - yes | git push heroku master
