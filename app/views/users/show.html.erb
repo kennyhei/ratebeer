@@ -26,15 +26,19 @@
   </p>
 <% end %>
 
-<p>
-  <strong>Favorite brewery:</strong>
-  <%= @user.favorite_brewery.name %>
-</p>
+<% if not @user.favorite_brewery.nil? %>
+    <p>
+      <strong>Favorite brewery:</strong>
+      <%= @user.favorite_brewery.name %>
+    </p>
+<% end %>
 
-<p>
-  <strong>Favorite style:</strong>
-  <%= @user.favorite_style %>
-</p>
+<% if not @user.favorite_style.nil? %>
+    <p>
+      <strong>Favorite style:</strong>
+      <%= @user.favorite_style %>
+    </p>
+<% end %>
 
 <% if currently_signed_in? @user %>
   <%= link_to 'Edit', edit_user_path(@user) %> |
