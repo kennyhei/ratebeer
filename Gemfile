@@ -54,8 +54,6 @@ gem 'debugger', :group => :development
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.1.2'
 
-gem 'nokogiri'
-
 # Use unicorn as the app server
 # gem 'unicorn'
 
