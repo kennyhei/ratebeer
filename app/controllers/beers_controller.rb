@@ -1,6 +1,6 @@
 class BeersController < ApplicationController
   before_action :set_beer, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate, only: [:destroy]
+  before_filter :ensure_that_signed_in, except: [:index, :show]
 
   # GET /beers
   # GET /beers.json
@@ -22,6 +22,8 @@ class BeersController < ApplicationController
 
   # GET /beers/1/edit
   def edit
+    @breweries = Brewery.all
+    @styles = ["Weizen", "Lager", "Ale", "Pale ale", "IPA", "Porter"]
   end
 
   # POST /beers

@@ -53,7 +53,7 @@ describe "User" do
       beer = FactoryGirl.create(:beer)
       FactoryGirl.create(:rating, :score => 15, :beer => beer, :user => @user)
 
-      visit user_path(@user)
+      sign_in 'Pekka', 'foobar1'
 
       expect(page).to have_content 'Favorite style: Lager'
     end
@@ -63,7 +63,7 @@ describe "User" do
       beer = FactoryGirl.create(:beer, :brewery => brewery)
       FactoryGirl.create(:rating, :score => 20, :beer => beer, :user => @user)
 
-      visit user_path(@user)
+      sign_in 'Pekka', 'foobar1'
 
       expect(page).to have_content 'Favorite brewery: anonymous'
     end

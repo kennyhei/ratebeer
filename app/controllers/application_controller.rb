@@ -14,4 +14,12 @@ class ApplicationController < ActionController::Base
   def currently_signed_in?(user)
     current_user == user
   end
+
+  def ensure_that_signed_in
+    redirect_to signin_path, :notice => 'You should be signed in' if current_user.nil?
+  end
+
+  def ensure_that_admin
+    redirect_to breweries_path, :notice => "You do not have administrator privileges!" unless current_user.admin == true
+  end
 end
