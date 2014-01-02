@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18b2812b-148e-433c-93c1-fba640b74371" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.travis.yml" afterPath="$PROJECT_DIR$/.travis.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ratebeer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,7 +55,7 @@
       <file leaf-file-name="Gemfile" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="20" selection-start="115" selection-end="115" vertical-scroll-proportion="0.084690556" vertical-offset="0" max-vertical-offset="1898">
+            <state line="17" column="3" selection-start="363" selection-end="363" vertical-scroll-proportion="0.47991315" vertical-offset="0" max-vertical-offset="1742">
               <folding />
             </state>
           </provider>
@@ -1056,7 +1055,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="20" selection-start="115" selection-end="115" vertical-scroll-proportion="0.084690556" vertical-offset="0" max-vertical-offset="1898">
+        <state line="17" column="3" selection-start="363" selection-end="363" vertical-scroll-proportion="0.47991315" vertical-offset="0" max-vertical-offset="1742">
           <folding />
         </state>
       </provider>

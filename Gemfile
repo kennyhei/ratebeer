@@ -7,6 +7,14 @@ group :development, :test do
 
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+  gem 'rspec-rails', '~> 2.0'
+end
+
+group :test do
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'simplecov', :require => false
 end
 
 group :production do
@@ -40,28 +48,14 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+# Use debugger
 gem 'debugger', :group => :development
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.1.2'
-
-# Rspec for testing
-group :development, :test do
-  gem 'rspec-rails', '~> 2.0'
-end
-
-group :test do
-  gem 'factory_girl_rails'
-  gem 'capybara'
-  gem 'launchy'
-  gem 'simplecov', :require => false
-end
 
 # Use unicorn as the app server
 # gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
