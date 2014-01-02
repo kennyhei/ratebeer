@@ -6,13 +6,11 @@ script:
 - RAILS_ENV=test bundle exec rake db:migrate --trace
 - bundle exec rake db:test:prepare
 - bundle exec rspec -f d spec
-
 deploy:
   provider: heroku
   api_key:
-    secure: P7aYm1U6ZGp0XbN3LgzBVEwUegReU/JUzp93r27J2GDrtxEylGRzVtG3b+IK2iDwrPGYFnZAc+4J0Pd9FDXXsWIZIKOuCGAubrTZ10wess7TVvR3iTXz2o8yaNf/kqg8rxHEDQiHc84KYIWioUmLe45okCYEn5zU2Tpr7vGSUKU=
+    secure: Pyo60KKBSqI1OHktH29uixEfIfTvrQar074rMqLVfDB1lZ7/w00ntWBHRJQk7jXMuxlPDV7wofV/LsbGWhYeGqZ3zz//tEqnWETBQHUaQ+wLITj0UwwcH1LbGXhsBc+c5Th4niKZLU2709MJRW7TnG28CtBGKVoP2QMkqiz7APY=
   app: ratebeer-wadror
-  run: "rake db:migrate"
-
+  run: rake db:migrate
 notifications:
   email: false
