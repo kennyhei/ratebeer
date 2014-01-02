@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18b2812b-148e-433c-93c1-fba640b74371" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coverage/.resultset.json" afterPath="$PROJECT_DIR$/coverage/.resultset.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coverage/index.html" afterPath="$PROJECT_DIR$/coverage/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/ratebeer.iml" afterPath="$PROJECT_DIR$/.idea/ratebeer.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.travis.yml" afterPath="$PROJECT_DIR$/.travis.yml" />
     </list>
     <ignored path="ratebeer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -64,10 +60,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gemfile.lock" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Gemfile.lock" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gemfile.lock">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="145" column="19" selection-start="3745" selection-end="3745" vertical-scroll-proportion="2.763453" vertical-offset="0" max-vertical-offset="3247">
+            <state line="145" column="19" selection-start="3745" selection-end="3745" vertical-scroll-proportion="-85.0" vertical-offset="0" max-vertical-offset="3247">
               <folding />
             </state>
           </provider>
@@ -91,14 +87,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".travis.yml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name=".travis.yml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="8" selection-start="29" selection-end="29" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
-              <folding>
-                <marker date="1388673823391" expanded="true" signature="16:30" placeholder="rvm:" />
-                <marker date="1388673823391" expanded="true" signature="31:198" placeholder="script:" />
-              </folding>
+            <state line="9" column="0" selection-start="193" selection-end="193" vertical-scroll-proportion="0.24779736" vertical-offset="0" max-vertical-offset="908">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -192,8 +185,8 @@
         <option value="$PROJECT_DIR$/spec/models/brewery_spec.rb" />
         <option value="$PROJECT_DIR$/spec/spec_helper.rb" />
         <option value="$PROJECT_DIR$/Gemfile.lock" />
-        <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/Gemfile" />
+        <option value="$PROJECT_DIR$/.travis.yml" />
       </list>
     </option>
   </component>
@@ -1046,13 +1039,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.travis.yml">
+    <entry file="file://$PROJECT_DIR$/Gemfile.lock">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="8" selection-start="29" selection-end="29" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
-          <folding>
-            <marker date="1388673823391" expanded="true" signature="16:30" placeholder="rvm:" />
-            <marker date="1388673823391" expanded="true" signature="31:198" placeholder="script:" />
-          </folding>
+        <state line="145" column="19" selection-start="3745" selection-end="3745" vertical-scroll-proportion="-85.0" vertical-offset="0" max-vertical-offset="3247">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1063,9 +1053,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile.lock">
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="145" column="19" selection-start="3745" selection-end="3745" vertical-scroll-proportion="2.763453" vertical-offset="0" max-vertical-offset="3247">
+        <state line="9" column="0" selection-start="193" selection-end="193" vertical-scroll-proportion="0.24779736" vertical-offset="0" max-vertical-offset="908">
           <folding />
         </state>
       </provider>

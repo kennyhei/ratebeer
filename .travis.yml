@@ -1,10 +1,20 @@
 language: ruby
-
 rvm:
- - 1.9.3
-
+- 1.9.3
 script:
- - bundle exec rake db:migrate --trace
- - RAILS_ENV=test bundle exec rake db:migrate --trace
- - bundle exec rake db:test:prepare
- - bundle exec rspec -f d spec
+- bundle exec rake db:migrate --trace
+- RAILS_ENV=test bundle exec rake db:migrate --trace
+- bundle exec rake db:test:prepare
+- bundle exec rspec -f d spec
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: P7aYm1U6ZGp0XbN3LgzBVEwUegReU/JUzp93r27J2GDrtxEylGRzVtG3b+IK2iDwrPGYFnZAc+4J0Pd9FDXXsWIZIKOuCGAubrTZ10wess7TVvR3iTXz2o8yaNf/kqg8rxHEDQiHc84KYIWioUmLe45okCYEn5zU2Tpr7vGSUKU=
+  app: ratebeer-wadror
+  on:
+    repo: kennyhei/ratebeer
+  run: "rake db:migrate"
+
+notifications:
+  email: false
