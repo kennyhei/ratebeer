@@ -1,6 +1,10 @@
 language: ruby
 rvm:
 - 1.9.3
+
+after_script:
+- gem install heroku
+
 script:
 - bundle exec rake db:migrate --trace
 - RAILS_ENV=test bundle exec rake db:migrate --trace
