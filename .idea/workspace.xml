@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="18b2812b-148e-433c-93c1-fba640b74371" name="Default" comment="" />
+    <list default="true" id="18b2812b-148e-433c-93c1-fba640b74371" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.travis.yml" afterPath="$PROJECT_DIR$/.travis.yml" />
+    </list>
     <ignored path="ratebeer.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -41,13 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".travis.yml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name=".travis.yml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="30" selection-start="192" selection-end="192" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
-              <folding>
-                <marker date="1388684667517" expanded="true" signature="28:192" placeholder="script:" />
-              </folding>
+            <state line="7" column="30" selection-start="192" selection-end="192" vertical-scroll-proportion="0.13266444" vertical-offset="0" max-vertical-offset="897">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -61,10 +61,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gemfile.lock" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Gemfile.lock" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gemfile.lock">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="145" column="6" selection-start="3730" selection-end="3732" vertical-scroll-proportion="0.3329493" vertical-offset="2176" max-vertical-offset="3264">
+            <state line="145" column="6" selection-start="3730" selection-end="3732" vertical-scroll-proportion="-9.965517" vertical-offset="2176" max-vertical-offset="3264">
               <folding />
             </state>
           </provider>
@@ -1082,15 +1082,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.travis.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="30" selection-start="192" selection-end="192" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
-          <folding>
-            <marker date="1388684667517" expanded="true" signature="28:192" placeholder="script:" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="49" selection-start="196" selection-end="196" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1139">
@@ -1100,7 +1091,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile.lock">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="145" column="6" selection-start="3730" selection-end="3732" vertical-scroll-proportion="0.3329493" vertical-offset="2176" max-vertical-offset="3264">
+        <state line="145" column="6" selection-start="3730" selection-end="3732" vertical-scroll-proportion="-9.965517" vertical-offset="2176" max-vertical-offset="3264">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="30" selection-start="192" selection-end="192" vertical-scroll-proportion="0.13266444" vertical-offset="0" max-vertical-offset="897">
           <folding />
         </state>
       </provider>

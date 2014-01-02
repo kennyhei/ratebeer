@@ -9,7 +9,7 @@ script:
 deploy:
   provider: heroku
   api_key:
-    secure: "coGLeX7eLYPzlZGFy4ByOH6xi+TffBENj0jrIPr3Olgf47y7pf5R3Hla5ziXV8jyni5FFzMYAC1sZ5RkMX9Ybzeoq7aw2hTOrHSM5W+czF8vqM0Xqh7DRy82iN2DikykTnt9CcpeGW0Zy2lQ32aUSW7h+mypJwvj6xdfqpAaX3Y="
+    secure: F3vVAbgH8YW/ckWWzndaeEefXVsV03sjcxfztttD3dfT5DiszGFAD4CNG7zMDLJhqlXIPSRfoRjuq807pjSYrZ+pQCBqldY3jp9VtkDSWAV0TJyVDru2I02IN436GhuDpIiaqnOtEODmBdSx1f4QmCuIWf9yq+NhPDrvnLS3TBc=
   app: ratebeer-wadror
   run: rake db:migrate
 notifications:
