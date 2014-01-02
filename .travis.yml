@@ -1,9 +1,6 @@
 language: ruby
 rvm:
-- 1.9.3
-
-after_script:
-- gem install heroku
+- 2.0.0
 
 script:
 - bundle exec rake db:migrate --trace
@@ -14,6 +11,7 @@ deploy:
   provider: heroku
   api_key:
     secure: Pyo60KKBSqI1OHktH29uixEfIfTvrQar074rMqLVfDB1lZ7/w00ntWBHRJQk7jXMuxlPDV7wofV/LsbGWhYeGqZ3zz//tEqnWETBQHUaQ+wLITj0UwwcH1LbGXhsBc+c5Th4niKZLU2709MJRW7TnG28CtBGKVoP2QMkqiz7APY=
+  strategy: git
   app: ratebeer-wadror
   run: rake db:migrate
 notifications:
