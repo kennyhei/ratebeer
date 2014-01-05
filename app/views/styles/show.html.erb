@@ -16,6 +16,7 @@
   </ul>
 </p>
 
+<%= link_to 'New', new_style_path %>
 <% if current_user %>
     <%= link_to 'Edit', edit_style_path(@style) %> |
     <%= link_to 'Destroy', @style, method: :delete, data: { confirm: 'Are you sure?' } %> |
