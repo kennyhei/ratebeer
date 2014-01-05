@@ -23,13 +23,13 @@ a5 = Beer.new :name => "X Porter"
 a6 = Beer.new :name => "Hefezeizen"
 a7 = Beer.new :name => "Helles"
 
-s1 << a1
-s1 << a2
-s1 << a3
-s1 << a7
-s2 << a4
-s3 << a5
-s4 << a6
+s1.beers << a1
+s1.beers << a2
+s1.beers << a3
+s1.beers << a7
+s2.beers << a4
+s3.beers << a5
+s4.beers << a6
 
 b1.beers << a1
 b1.beers << a2
