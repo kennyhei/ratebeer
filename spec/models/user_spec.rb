@@ -144,7 +144,7 @@ def create_beers_with_ratings_and_styles(*scores, style, user)
 end
 
 def create_beer_with_rating_and_style(score, style, user)
-  beer = FactoryGirl.create(:beer, :style => style)
+  beer = FactoryGirl.create(:beer, :style => FactoryGirl.create(:style, :name => style))
   FactoryGirl.create(:rating, :score => score, :beer => beer, :user => user)
   beer # return beer
 end
