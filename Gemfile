@@ -58,6 +58,8 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 # For HTTP requests
 gem 'httparty'
 
+gem "rails-settings-cached", "0.3.1"
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

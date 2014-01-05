@@ -1,8 +1,10 @@
 Ratebeer::Application.routes.draw do
   root to: 'breweries#index'
 
-  get 'places', to: 'places#index'
+  resources :places, :only => [:index, :show]
   post 'places', to: 'places#search'
+
+  resources :styles
 
   # Alternative route
   get 'signup', to: 'users#new'

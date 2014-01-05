@@ -1,0 +1,21 @@
+<h2><%= @place.name %></h2>
+
+<p>
+  <%= @place.street %>, <%= @place.zip %> <%= @place.city %>
+</p>
+
+<p>
+  <strong>Scores:</strong>
+  <br>
+  <% @scores.each do |key, value| %>
+      <% if not value.nil? %>
+          <%= "#{key} : #{value}" %> <br>
+      <% end %>
+  <% end %>
+</p>
+
+<iframe src="<%= @place.blogmap %>" width="500" height="400"></iframe>
+
+<br>
+
+<%= link_to 'Back', places_path %>

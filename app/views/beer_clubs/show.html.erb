@@ -1,12 +1,21 @@
 <h2><%= @club.name %></h2>
 
+<p id="notice"><%= notice %></p>
+
 <p>Founded <%= @club.founded %></p>
 
 <p>
-  <strong>members:</strong>
+  <strong>Members:</strong>
   <ul>
     <% @club.members.each do |member| %>
         <li><%= link_to member.username, member %></li>
     <% end %>
   </ul>
 </p>
+
+<h4>Join a club</h4>
+
+<%= form_for(@membership) do |f| %>
+    <%= f.hidden_field :beer_club_id %>
+    <%= f.submit %>
+<% end %>

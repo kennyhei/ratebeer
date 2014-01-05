@@ -1,7 +1,7 @@
 class BeermappingAPI
 
   def self.places_in(city)
-    Place # Ensures that code of the class is loaded
+    Place # Ensures that class is loaded
 
     city = city.downcase
 
@@ -29,7 +29,27 @@ class BeermappingAPI
     end
   end
 
+  def self.scores_in(location)
+    Place # Ensures that class is loaded
+
+    # Cache unless already cached
+    if not Rails.cache.exist? location
+      Rails.cache.write(location, fetch_scores_in(location), :expires_in => 1.hour)
+    end
+
+    Rails.cache.read location
+  end
+
+  def self.fetch_scores_in(location)
+    url = "http://beermapping.com/webservice/locscore/#{key}/"
+
+    response = HTTParty.get("#{url}#{location}")
+    scores = response.parsed_response["bmp_locations"]["location"]
+
+    scores
+  end
+
   def self.key
-    "312a68db9e06263a225fa17ac48b13b1"
+    Settings.beermapping_apikey
   end
 end

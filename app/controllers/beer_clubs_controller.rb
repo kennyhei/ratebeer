@@ -15,6 +15,8 @@ class BeerClubsController < ApplicationController
 
   def show
     @club = BeerClub.find(params[:id])
+    @membership = Membership.new
+    @membership.beer_club = @club
   end
 
   private

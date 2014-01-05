@@ -1,4 +1,6 @@
 class MembershipsController < ApplicationController
+  before_filter :ensure_that_signed_in
+
   def new
     @membership = Membership.new
     @clubs = BeerClub.all
