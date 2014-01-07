@@ -1,13 +1,23 @@
-<h2>Listing beer clubs</h2>
+<h2>Beer clubs</h2>
 
-<p>Number of clubs: <%= @clubs.count %></p>
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>City</th>
+    <th>Founded</th>
+  </tr>
+  </thead>
 
-<ul>
+  <tbody>
   <% @clubs.each do |club| %>
-      <li>
-        <%= link_to club.name, club %>
-      </li>
+      <tr>
+        <td><%= link_to club.name, club %></td>
+        <td><%= club.city %></td>
+        <td><%= club.founded %></td>
+      </tr>
   <% end %>
-</ul>
+  </tbody>
+</table>
 
-<%= link_to('New beer club', new_beer_club_path) if current_user %>
+<%= link_to('New beer club', new_beer_club_path, :class => 'btn btn-primary') if current_user %>

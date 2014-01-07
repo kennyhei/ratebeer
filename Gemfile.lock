@@ -30,6 +30,9 @@ GEM
     atomic (1.1.14)
     bcrypt-ruby (3.1.2)
     bcrypt-ruby (3.1.2-x86-mingw32)
+    bootstrap-sass-rails (3.0.3.0)
+      railties (>= 3.1.0)
+      sass-rails (>= 3.1.0)
     builder (3.1.4)
     capybara (2.2.1)
       mime-types (>= 1.16)
@@ -112,6 +115,7 @@ GEM
     rails_12factor (0.0.2)
       rails_serve_static_assets
       rails_stdout_logging
+    rails_layout (0.5.11)
     rails_serve_static_assets (0.0.2)
     rails_stdout_logging (0.0.3)
     railties (4.0.2)
@@ -191,6 +195,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt-ruby (~> 3.1.2)
+  bootstrap-sass-rails
   capybara
   coffee-rails (~> 4.0.0)
   database_cleaner (< 1.1.0)
@@ -204,6 +209,7 @@ DEPENDENCIES
   rails (= 4.0.2)
   rails-settings-cached (= 0.3.1)
   rails_12factor
+  rails_layout
   rspec-rails (~> 2.0)
   sass-rails (~> 4.0.0)
   sdoc

@@ -8,6 +8,7 @@ group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
   gem 'rspec-rails', '~> 2.0'
+  gem 'rails_layout'
 end
 
 group :test do
@@ -61,6 +62,8 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 gem 'httparty'
 
 gem "rails-settings-cached", "0.3.1"
+
+gem 'bootstrap-sass-rails'
 
 # Use unicorn as the app server
 # gem 'unicorn'

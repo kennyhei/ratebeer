@@ -16,10 +16,9 @@
   </ul>
 </p>
 
-<%= link_to 'New style', new_style_path %>
 <% if current_user %>
-    <%= link_to 'Edit', edit_style_path(@style) %> |
-    <%= link_to 'Destroy', @style, method: :delete, data: { confirm: 'Are you sure?' } %> |
+    <%= link_to 'Edit', edit_style_path(@style), :class => 'btn btn-warning' %> |
+    <%= link_to 'Destroy', @style, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %> |
 <% end %>
-<%= link_to 'Back', styles_path %>
+<%= link_to 'Back', styles_path, :class => 'btn btn-primary' %>
 

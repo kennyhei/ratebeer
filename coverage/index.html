@@ -14,7 +14,7 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2014-01-07T18:19:05+02:00">2014-01-07T18:19:05+02:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2014-01-07T21:07:25+02:00">2014-01-07T21:07:25+02:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         3.06
+         2.99
        </span>
     </span> hits/line)
   </h2>
@@ -57,7 +57,7 @@
         <td>12</td>
         <td>11</td>
         <td>1</td>
-        <td>33.6</td>
+        <td>32.3</td>
       </tr>
       
       <tr>
@@ -207,7 +207,7 @@
         <td>7</td>
         <td>7</td>
         <td>0</td>
-        <td>3.3</td>
+        <td>2.3</td>
       </tr>
       
       <tr>
@@ -377,7 +377,7 @@
         <td>27</td>
         <td>19</td>
         <td>8</td>
-        <td>1.8</td>
+        <td>1.2</td>
       </tr>
       
       <tr>
@@ -594,14 +594,14 @@
           <code class="ruby">  def current_user</code>
         </li>
       
-        <li class="covered" data-hits="195" data-linenumber="10">
-          <span class="hits">195</span>
+        <li class="covered" data-hits="182" data-linenumber="10">
+          <span class="hits">182</span>
           
           <code class="ruby">    return nil if session[:user_id].nil?</code>
         </li>
       
-        <li class="covered" data-hits="149" data-linenumber="11">
-          <span class="hits">149</span>
+        <li class="covered" data-hits="147" data-linenumber="11">
+          <span class="hits">147</span>
           
           <code class="ruby">    User.find(session[:user_id])</code>
         </li>
@@ -3360,8 +3360,8 @@
           <code class="ruby">    # Initializes model</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="11">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="5" data-linenumber="11">
+          <span class="hits">5</span>
           
           <code class="ruby">    super</code>
         </li>
@@ -5412,8 +5412,8 @@
           <code class="ruby">    if not Rails.cache.exist? city</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="10">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="2" data-linenumber="10">
+          <span class="hits">2</span>
           
           <code class="ruby">      Rails.cache.write(city, fetch_places_in(city), :expires_in =&gt; 1.hour)</code>
         </li>
@@ -5454,8 +5454,8 @@
           <code class="ruby">  def self.fetch_places_in(city)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="17">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="2" data-linenumber="17">
+          <span class="hits">2</span>
           
           <code class="ruby">    url = &quot;http://beermapping.com/webservice/loccity/#{key}/&quot;</code>
         </li>
@@ -5466,14 +5466,14 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="19">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="2" data-linenumber="19">
+          <span class="hits">2</span>
           
           <code class="ruby">    response = HTTParty.get(&quot;#{url}#{city.gsub(' ', '%20')}&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="20">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="2" data-linenumber="20">
+          <span class="hits">2</span>
           
           <code class="ruby">    places = response.parsed_response[&quot;bmp_locations&quot;][&quot;location&quot;]</code>
         </li>
@@ -5484,8 +5484,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="22">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="2" data-linenumber="22">
+          <span class="hits">2</span>
           
           <code class="ruby">    return [] if places.is_a?(Hash) and places['id'].nil?</code>
         </li>
@@ -5496,8 +5496,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="24">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="24">
+          <span class="hits">1</span>
           
           <code class="ruby">    places = [places] if places.is_a?(Hash)</code>
         </li>
@@ -5514,14 +5514,14 @@
           <code class="ruby">    # Convert hash array into Place-object array</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="27">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="27">
+          <span class="hits">1</span>
           
           <code class="ruby">    return places.inject([]) do |set, location|</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="28">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="1" data-linenumber="28">
+          <span class="hits">1</span>
           
           <code class="ruby">      set &lt;&lt; Place.new(location)</code>
         </li>
@@ -5670,8 +5670,8 @@
           <code class="ruby">  def self.key</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="53">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="2" data-linenumber="53">
+          <span class="hits">2</span>
           
           <code class="ruby">    Settings.beermapping_apikey</code>
         </li>
