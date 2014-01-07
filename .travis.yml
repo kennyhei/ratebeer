@@ -1,15 +1,23 @@
 language: ruby
+
 rvm:
 - 2.0.0
+
+before_install:
+- "export DISPLAY=:99.0"
+- "sh -e /etc/init.d/xvfb start"
+
 script:
 - bundle exec rake db:migrate --trace
 - RAILS_ENV=test bundle exec rake db:migrate --trace
 - bundle exec rake db:test:prepare
 - bundle exec rspec -f d spec/
+
 deploy:
   provider: heroku
   api_key:
     secure: F3vVAbgH8YW/ckWWzndaeEefXVsV03sjcxfztttD3dfT5DiszGFAD4CNG7zMDLJhqlXIPSRfoRjuq807pjSYrZ+pQCBqldY3jp9VtkDSWAV0TJyVDru2I02IN436GhuDpIiaqnOtEODmBdSx1f4QmCuIWf9yq+NhPDrvnLS3TBc=
   run: rake db:migrate
+
 notifications:
   email: false

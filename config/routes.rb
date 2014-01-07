@@ -4,7 +4,7 @@ Ratebeer::Application.routes.draw do
   resources :places, :only => [:index, :show]
   post 'places', to: 'places#search'
 
-  resources :styles
+  get 'beerlist', to: 'beers#list'
 
   # Alternative route
   get 'signup', to: 'users#new'
@@ -16,7 +16,7 @@ Ratebeer::Application.routes.draw do
   resources :sessions, :only => [:new, :create, :destroy]
   resources :ratings, :only => [:index, :new, :create, :destroy]
 
-  resources :beers, :breweries, :users
+  resources :beers, :breweries, :users, :styles
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
