@@ -55,7 +55,7 @@ describe "User" do
 
       sign_in 'Pekka', 'foobar1'
 
-      expect(page).to have_content 'Favorite style: Lager'
+      expect(page).to have_content 'Preferred style: Lager'
     end
 
     it "has a favorite brewery, when one or more ratings" do

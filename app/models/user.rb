@@ -51,4 +51,11 @@ class User < ActiveRecord::Base
     sorted_by_activity = User.all.sort_by { |u| -u.ratings.count }
     sorted_by_activity.first(n)
   end
+
+  def confirmed_member?(club_id)
+    membership = Membership.where(:beer_club_id => club_id, :user_id => id).first
+
+    return nil if membership.nil?
+    membership.confirmed
+  end
 end

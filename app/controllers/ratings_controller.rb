@@ -21,8 +21,8 @@ class RatingsController < ApplicationController
     @rating = Rating.new(rating_params)
 
     if @rating.save
-      user_signed_in?.ratings << @rating
-      redirect_to user_path user_signed_in?
+      current_user.ratings << @rating
+      redirect_to user_path current_user
     else
       @beers = Beer.all
       render :new
@@ -31,7 +31,7 @@ class RatingsController < ApplicationController
 
   def destroy
     rating = Rating.find params[:id]
-    rating.delete if user_signed_in? == rating.user
+    rating.delete if current_user == rating.user
     redirect_to :back
   end
 

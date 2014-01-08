@@ -1,29 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<h2><%= @user.username %></h2>
+<h1><%= @user.username %></h1>
 
-<p>has given <%= pluralize(@user.ratings.count, 'rating') %>, average <%= round(@user.average_rating) %></p>
+<% if not @user.favorite_beer.nil? %>
+    <p>
+      <strong>Favorite beer:</strong>
+      <%= @user.favorite_beer.name %>
+    </p>
+<% end %>
 
-<p>
-  <ul>
-    <% @user.ratings.each do |rating| %>
-      <li>
-        <%= rating %>
-        <% if currently_signed_in? @user %>
-            <%= link_to 'delete', rating, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %>
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
-</p>
-
-<% if not @user.beer_clubs.empty? %>
-  <p>
-    belongs to
-    <% @user.beer_clubs.each do |club| %>
-      <%= link_to club.name, club %>
-    <% end %>
-  </p>
+<% if not @user.favorite_style.nil? %>
+    <p>
+      <strong>Preferred style:</strong>
+      <%= @user.favorite_style.name %>
+    </p>
 <% end %>
 
 <% if not @user.favorite_brewery.nil? %>
@@ -33,11 +23,48 @@
     </p>
 <% end %>
 
-<% if not @user.favorite_style.nil? %>
+<h3>Beer clubs</h3>
+
+<% if not @user.beer_clubs.empty? %>
     <p>
-      <strong>Favorite style:</strong>
-      <%= @user.favorite_style.name %>
+      <strong>belongs to</strong>
+
+    <ul>
+      <% @user.beer_clubs.each do |club| %>
+          <li><%= link_to club.name, club %></li>
+      <% end %>
+    </ul>
+
     </p>
+
+    <p>
+      <strong>Applications pending for:</strong>
+
+    <ul>
+      <% @user.beer_clubs.each do |club| %>
+          <% if club.is_a_confirmed_member?(@user) and club.applicants.count > 0 %>
+              <li>
+                <%= link_to club.name, club %>
+              </li>
+          <% end %>
+      <% end %>
+    </ul>
+    </p>
+<% end %>
+
+<h3>Ratings</h3>
+
+<strong>has given <%= pluralize(@user.ratings.count, 'rating') %>, average <%= round(@user.average_rating) %></strong>
+
+<% @user.ratings.each do |rating| %>
+    <div class="row">
+      <div class="col-md-3"><%= rating %></div>
+      <div class="col-md-1">
+        <% if currently_signed_in? @user %>
+            <%= link_to 'delete', rating, method: :delete, data: {confirm: 'Are you sure?'}, :class => 'btn btn-danger' %>
+        <% end %>
+      </div>
+    </div>
 <% end %>
 
 <% if currently_signed_in? @user %>

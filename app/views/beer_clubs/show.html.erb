@@ -1,21 +1,41 @@
 <h2><%= @club.name %></h2>
 
-<p id="notice"><%= notice %></p>
-
 <p>Founded <%= @club.founded %></p>
 
 <p>
   <strong>Members:</strong>
   <ul>
-    <% @club.members.each do |member| %>
-        <li><%= link_to member.username, member %></li>
+    <% @confirmed_members.each do |membership| %>
+        <li><%= link_to membership.user.username, membership.user %></li>
     <% end %>
   </ul>
 </p>
 
-<h4>Join a club</h4>
+<% if @applicants.any? and @club.is_a_confirmed_member?(current_user) %>
+    <p>
+      <strong>Applications:</strong>
+    <ul>
 
-<%= form_for(@membership) do |f| %>
-    <%= f.hidden_field :beer_club_id %>
-    <%= f.submit :class => 'btn btn-primary' %>
+      <% @applicants.each do |application| %>
+          <li>
+            <%= application.user.username %>
+            <%= link_to 'Confirm', confirm_membership_path(application), :method => :post, :class => "btn btn-default" %>
+          </li>
+      <% end %>
+
+    </ul>
+    </p>
+<% end %>
+
+<% if not @club.is_a_member?(current_user) %>
+    <h4>Join a club</h4>
+
+    <%= form_for(@membership) do |f| %>
+        <%= f.hidden_field :beer_club_id %>
+        <%= f.submit :class => 'btn btn-primary' %>
+    <% end %>
+<% end %>
+
+<% if current_user %>
+    <%= link_to 'Destroy', @club, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
 <% end %>

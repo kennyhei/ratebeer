@@ -12,4 +12,4 @@
 <p>Number of retired breweries: <%= @inactive_breweries.count %></p>
 <%= render 'list', :breweries => @inactive_breweries %>
 
-<%= link_to('New Brewery', new_brewery_path, :class => 'btn btn-primary') if user_signed_in? %>
+<%= link_to('New Brewery', new_brewery_path, :class => 'btn btn-primary') if current_user %>
