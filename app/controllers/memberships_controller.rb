@@ -8,15 +8,15 @@ class MembershipsController < ApplicationController
 
   def create
 
-    user = User.find(current_user.id)
+    user = User.find(user_signed_in?.id)
 
     if user.beer_clubs.any? { |club| club.id.to_s == params[:membership][:beer_club_id]}
       redirect_to :back, :notice => "User is already a member of this club!"
     else
       membership = Membership.create(membership_params)
-      current_user.memberships << membership
+      user_signed_in?.memberships << membership
 
-      redirect_to user_path current_user
+      redirect_to user_path user_signed_in?
     end
   end
 

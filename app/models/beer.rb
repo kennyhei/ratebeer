@@ -1,4 +1,5 @@
 class Beer < ActiveRecord::Base
+  extend TopRatings
   include RatingAverage
 
   validates_presence_of :name

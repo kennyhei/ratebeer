@@ -41,7 +41,7 @@ describe User do
       user.ratings << FactoryGirl.create(:rating2)
 
       expect(user.ratings.count).to eq(2)
-      expect(user.average_rating).to eq("15.00")
+      expect(user.average_rating).to eq(15.0)
     end
   end
 

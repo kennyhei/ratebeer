@@ -46,4 +46,9 @@ class User < ActiveRecord::Base
 
     groups
   end
+
+  def self.most_active(n)
+    sorted_by_activity = User.all.sort_by { |u| -u.ratings.count }
+    sorted_by_activity.first(n)
+  end
 end

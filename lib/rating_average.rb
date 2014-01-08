@@ -1,7 +1,7 @@
 module RatingAverage
-  include ActionView::Helpers::NumberHelper
 
   def average_rating
-    number_with_precision(ratings.average("score"), :precision => 2)
+    return 0 if ratings.average("score").nil?
+    ratings.average("score")
   end
 end

@@ -2,6 +2,11 @@ class RatingsController < ApplicationController
   before_filter :ensure_that_signed_in, except: [:index]
 
   def index
+    @most_active_users = User.most_active(3)
+    @top_breweries = Brewery.top(3)
+    @top_beers = Beer.top(3)
+    @top_styles = Style.top(3)
+    @recent_ratings = Rating.recent
     @ratings = Rating.all
   end
 
@@ -16,8 +21,8 @@ class RatingsController < ApplicationController
     @rating = Rating.new(rating_params)
 
     if @rating.save
-      current_user.ratings << @rating
-      redirect_to user_path current_user
+      user_signed_in?.ratings << @rating
+      redirect_to user_path user_signed_in?
     else
       @beers = Beer.all
       render :new
@@ -26,7 +31,7 @@ class RatingsController < ApplicationController
 
   def destroy
     rating = Rating.find params[:id]
-    rating.delete if current_user == rating.user
+    rating.delete if user_signed_in? == rating.user
     redirect_to :back
   end
 

@@ -20,4 +20,4 @@
   </tbody>
 </table>
 
-<%= link_to('New beer club', new_beer_club_path, :class => 'btn btn-primary') if current_user %>
+<%= link_to('New beer club', new_beer_club_path, :class => 'btn btn-primary') if user_signed_in? %>
