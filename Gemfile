@@ -65,6 +65,9 @@ gem "rails-settings-cached", "0.3.1"
 
 gem 'bootstrap-sass-rails'
 
+gem 'actionpack-page_caching'
+gem 'actionpack-action_caching'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

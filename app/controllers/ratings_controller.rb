@@ -2,6 +2,9 @@ class RatingsController < ApplicationController
   before_filter :ensure_that_signed_in, except: [:index]
 
   def index
+
+    return if fragment_exist?('ratings')
+
     @most_active_users = User.most_active(3)
     @top_breweries = Brewery.top(3)
     @top_beers = Beer.top(3)

@@ -68,7 +68,6 @@
 <% end %>
 
 <% if currently_signed_in? @user %>
-  <%= link_to 'Edit', edit_user_path(@user), :class => 'btn btn-warning' %>
-  <%= link_to 'Destroy', @user, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %>
+  <%= link_to 'Edit user data', edit_user_path(@user), :class => 'btn btn-warning' %>
+  <%= link_to 'Delete account', @user, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %>
 <% end %>
-<%= link_to 'Back', users_path, :class => 'btn btn-primary' %>

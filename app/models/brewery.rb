@@ -8,7 +8,7 @@ class Brewery < ActiveRecord::Base
 
   validate :year_cannot_be_greater_than_current_year
 
-  has_many :beers
+  has_many :beers, :dependent => :destroy
   has_many :ratings, :through => :beers
 
   scope :active, -> { where(:active => true) }

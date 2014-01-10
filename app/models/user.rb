@@ -11,9 +11,11 @@ class User < ActiveRecord::Base
   validates :password, :format => { :with => /(?=.*[a-zA-Z])(?=.*[0-9])/,
                                     :message => "must contain numbers and letters"}
 
-  has_many :ratings, :dependent => :destroy # User has many ratings
-  has_many :beers, :through => :ratings
 
+  # Eager loading time!
+
+  has_many :ratings, :dependent => :destroy, :include => [:beer => [:brewery, :style]]
+  has_many :beers, :through => :ratings
   has_many :memberships
   has_many :beer_clubs, :through => :memberships
 

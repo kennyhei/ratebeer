@@ -1,60 +1,64 @@
 <h2>Ratings</h2>
 
-<p>Total number of ratings: <%= @ratings.count %></p>
+<% cache 'ratings', :expires_in => 10.minutes, :skip_digest => true do %>
 
-<div class="row">
+    <p>Total number of ratings: <%= @ratings.count %></p>
 
-  <div class="col-md-4">
+    <div class="row">
 
-    <h3>Top beers</h3>
-    <%= render "list", :items => @top_beers %>
-    </table>
-  </div>
+      <div class="col-md-4">
 
-  <div class="col-md-4">
+        <h3>Top beers</h3>
+        <%= render "list", :items => @top_beers %>
+        </table>
+      </div>
 
-    <h3>Top breweries</h3>
-    <%= render "list", :items => @top_breweries %>
-  </div>
+      <div class="col-md-4">
 
-  <div class="col-md-4">
+        <h3>Top breweries</h3>
+        <%= render "list", :items => @top_breweries %>
+      </div>
 
-    <h3>Top styles</h3>
-    <%= render "list", :items => @top_styles %>
-  </div>
+      <div class="col-md-4">
 
-</div>
+        <h3>Top styles</h3>
+        <%= render "list", :items => @top_styles %>
+      </div>
 
-<h3>Most active users</h3>
+    </div>
 
-<table class="table table-hover">
-  <thead>
-  <tr>
-    <th></th>
-    <th>Favorite beer</th>
-    <th>Favorite brewery</th>
-    <th>Preferred style</th>
-    <th>Ratings</th>
-  </tr>
-  </thead>
+    <h3>Most active users</h3>
 
-  <tbody>
-  <% @most_active_users.each do |user| %>
+    <table class="table table-hover">
+      <thead>
       <tr>
-        <td><%= link_to user.username, user %></td>
-        <td><%= user.favorite_beer unless user.favorite_beer.nil? %></td>
-        <td><%= user.favorite_brewery.name unless user.favorite_brewery.nil? %></td>
-        <td><%= user.favorite_style.name unless user.favorite_style.nil? %></td>
-        <td><%= user.ratings.count %></td>
+        <th></th>
+        <th>Favorite beer</th>
+        <th>Favorite brewery</th>
+        <th>Preferred style</th>
+        <th>Ratings</th>
       </tr>
-  <% end %>
-  </tbody>
-</table>
+      </thead>
 
-<h3>Recent ratings</h3>
+      <tbody>
+      <% @most_active_users.each do |user| %>
+          <tr>
+            <td><%= link_to user.username, user %></td>
+            <td><%= user.favorite_beer unless user.favorite_beer.nil? %></td>
+            <td><%= user.favorite_brewery.name unless user.favorite_brewery.nil? %></td>
+            <td><%= user.favorite_style.name unless user.favorite_style.nil? %></td>
+            <td><%= user.ratings.count %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
 
-<ul>
-  <% @recent_ratings.each do |rating| %>
-    <li><%= rating %>, rated by <%= link_to rating.user.username, rating.user %></li>
-  <% end %>
-</ul>
+    <h3>Recent ratings</h3>
+
+    <ul>
+      <% @recent_ratings.each do |rating| %>
+          <li><%= rating %>, rated by <%= link_to rating.user.username, rating.user %></li>
+      <% end %>
+    </ul>
+
+<% end %>
