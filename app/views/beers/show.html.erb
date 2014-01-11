@@ -20,16 +20,19 @@
   <% end %>
 </p>
 
-<h4>Rate beer:</h4>
+<% if current_user %>
+    <p>
+      <strong>Rate beer:</strong>
 
-<%= form_for(@rating) do |f| %>
-    <%= f.hidden_field :beer_id %>
-    Score: <%= f.number_field :score %>
+    <%= form_for(@rating) do |f| %>
+        <%= f.hidden_field :beer_id %>
+        Score: <%= f.number_field :score %>
 
-    <%= f.submit %>
+        <%= f.submit %>
+    <% end %>
+    </p>
 <% end %>
 
 <br>
 
 <%= edit_and_destroy_buttons(@beer) %>
-<%= link_to 'Back', beers_path, :class => 'btn btn-primary' %>
