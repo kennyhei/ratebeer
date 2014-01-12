@@ -43,7 +43,7 @@ class BeersController < ApplicationController
   def create
     @beer = Beer.new(beer_params)
 
-    ["beers-name", "beers-brewery", "beers-style"].each{ |f| expire_fragment(f) }
+    ['beers-name', 'beers-brewery', 'beers-style'].each{ |f| expire_fragment(f) }
 
     respond_to do |format|
       if @beer.save
@@ -61,7 +61,7 @@ class BeersController < ApplicationController
   # PATCH/PUT /beers/1
   # PATCH/PUT /beers/1.json
   def update
-    ["beers-name", "beers-brewery", "beers-style"].each{ |f| expire_fragment(f) }
+    ['beers-name', 'beers-brewery', 'beers-style'].each{ |f| expire_fragment(f) }
 
     respond_to do |format|
       if @beer.update(beer_params)
@@ -79,7 +79,7 @@ class BeersController < ApplicationController
   def destroy
     @beer.destroy
 
-    ["beers-name", "beers-brewery", "beers-style"].each{ |f| expire_fragment(f) }
+    ['beers-name', 'beers-brewery', 'beers-style'].each{ |f| expire_fragment(f) }
 
     respond_to do |format|
       format.html { redirect_to beers_url }
